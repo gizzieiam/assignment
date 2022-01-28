@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.MainFragment">
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textColor="#000000"
+        android:text="@string/_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        />
+    <Button
+        android:id="@+id/increment_btn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/increment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_v1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gl_h2"
+        />
+
+
+    <TextView
+        android:id="@+id/img_btn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/get_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <include
+        android:id="@+id/btn"
+        layout="@layout/activity_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+
+</FrameLayout>
