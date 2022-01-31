@@ -12,5 +12,14 @@
         android:textAppearance="?attr/textAppearanceHeadline4"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="testing"
+         />
+    <ImageView
+        android:id="@+id/img_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceHeadline4"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="testing"
+        android:contentDescription="@string/shibe_img"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

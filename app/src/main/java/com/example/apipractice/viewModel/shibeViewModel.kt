@@ -10,26 +10,31 @@ import kotlinx.coroutines.launch
 
 class shibeViewModel: ViewModel() {
 
-    private val _viewState = MutableLiveData<ViewState>(ViewState.Loading)
+
+    val _viewState = MutableLiveData<ViewState>(ViewState.Loading)
     private val _count = MutableLiveData(0)
     private var count = 0
-    fun getCount(): LiveData<Int>{
-        return _count
-    }
-
-
     val viewState : LiveData<ViewState> get() = _viewState
-    fun updateCount() {
-        count += 1
-        _count.value = count
-        println(count)
-    }
 
-    init{
+    fun getCount(): LiveData<Int>{ return _count }
+
+    fun updateCount(increment: Boolean) {
+        if (increment){
+            if (count +1 <= 100) {
+                count += 1
+            }
+        }else{
+            if (count -1 >= 0) {
+                count -= 1
+            }
+        }
+        _count.value = count
+    }
+    fun passArgs(count: Int){
+        println(count)
         viewModelScope.launch{
-            println()
             val state = try {
-                val urls = ShibaRepo.getShibes(_count.value ?: 1)
+                val urls = ShibaRepo.getShibes(count)
                 ViewState.Success(urls)
             }catch(ex: Exception) {
                 ViewState.Error(ex.message ?: "Something went wrong")

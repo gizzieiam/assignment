@@ -21,19 +21,21 @@ class ShibeFragment : Fragment(R.layout.fragment_shibe) {
     private val viewModel by viewModels<shibeViewModel>()
     private val args by navArgs<ShibeFragmentArgs>()
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ) = FragmentShibeBinding.inflate(inflater, container, false).also{
         _binding = it
-//        args.count
+
+        val imgCount = args.count.toInt()
+        viewModel.passArgs(imgCount)
 
     }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
+
         initObserver()
     }
 

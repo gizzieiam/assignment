@@ -14,9 +14,7 @@
         android:theme="@style/Theme.ApiPractice"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity
-            android:name=".btnActivity"
-            android:exported="false" />
+
         <activity
             android:name=".view.MainActivity"
             android:exported="true">
